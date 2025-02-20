@@ -8,7 +8,7 @@ const store = useCounterStore()
 
 <template>
   <div>
-    <button @click="store.increment">count++</button>
+    <el-button @click="store.increment">count++</el-button>
   </div>
   <HelloWorld msg="Vite + Vue" />
   <Mock />

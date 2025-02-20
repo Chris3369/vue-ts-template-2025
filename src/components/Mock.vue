@@ -9,7 +9,7 @@ store.getData()
 </script>
 <template>
     <h1>Mock</h1>
-    <button @click="store.getData()">Mock</button>
+    <el-button @click="store.getData()">Mock</el-button>
     <ul>
         <li v-for="item in store.mocks">
             {{ item }}
