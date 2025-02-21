@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useCounterStore } from "@/store/counter.store.ts"
+import { useCounterStore } from "../store/counter.store.ts"
 
 const store = useCounterStore()
 

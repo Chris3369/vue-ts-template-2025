@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { onMounted } from 'vue'
-import { useMockStore } from '@/store/mock.store.ts'
+import { useMockStore } from '../store/mock.store.ts'
 
 const store = useMockStore()
 
