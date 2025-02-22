@@ -15,6 +15,11 @@ export const constantRoute = [
         component: () => import('../views/demo1.vue')
     },
     {
+        path: '/demo2',
+        name: 'demo2',
+        component: () => import('../views/demo2.vue')
+    },
+    {
         path: '/404',
         name: '404',
         component: () => import('../views/404.vue')
