@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="menu">
-            menu
+            <Logo />
         </div>
         <div class="nav">nav</div>
         <div class="main">
@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang='ts'>
-
+import Logo from "@/layout/Logo.vue";
 </script>
 
 <style lang="scss" scoped>

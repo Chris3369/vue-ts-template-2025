@@ -2,7 +2,7 @@ export const constantRoute = [
     {
         path: '/',
         name: 'layout',
-        component: () => import('../layout/index.vue')
+        component: () => import('../layout/Layout.vue')
     },
     {
         path: '/login',
