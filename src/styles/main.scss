@@ -1,5 +1,9 @@
 @use 'scss-reset' as *;
 
+body {
+    font-family: Verdana, sans-serif;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }

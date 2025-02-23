@@ -2,6 +2,11 @@
     <div class="container">
         <div class="menu">
             <Logo />
+            <el-scrollbar class="scrollbar">
+                <el-menu background-color="$menu-background" text-color="white">
+                    <Menu :menus="userStore.menuRoutes"></Menu>
+                </el-menu>
+            </el-scrollbar>
         </div>
         <div class="nav">nav</div>
         <div class="main">
@@ -11,7 +16,11 @@
 </template>
 
 <script setup lang='ts'>
-import Logo from "@/layout/Logo.vue";
+import Logo from '@/layout/Logo.vue'
+import Menu from '@/layout/Menu.vue'
+import UserStore from '@/store/user.store'
+
+const userStore = UserStore()
 </script>
 
 <style lang="scss" scoped>
@@ -23,6 +32,15 @@ import Logo from "@/layout/Logo.vue";
         width: $menu-width;
         height: 100vh;
         background-color: $menu-background;
+
+        .scrollbar {
+            width: 100%;
+            height: calc(100vh - $logo-height);
+
+            .el-menu {
+                border-right: none;
+            }
+        }
     }
 
     .nav {

@@ -11,10 +11,10 @@
 
 <style lang="scss" scoped>
 
-.hello {
-    color: $text-color;
-    .world {
-        font-size: $font-size;
-    }
-}
+// .hello {
+//     color: $text-color;
+//     .world {
+//         font-size: $font-size;
+//     }
+// }
 </style>
