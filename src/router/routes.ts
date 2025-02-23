@@ -11,7 +11,8 @@ export const constantRoutes = [
                 component: () => import('../views/Home.vue'),
                 meta: {
                     title: 'Home',
-                    hidden: false
+                    hidden: false,
+                    icon: 'House'
                 }
             },
         ]
@@ -23,7 +24,8 @@ export const constantRoutes = [
         redirect: '/management/menu',
         meta: {
             title: 'Management',
-            hidden: false
+            hidden: false,
+            icon: 'Menu'
         },
         children: [
             {
@@ -32,6 +34,7 @@ export const constantRoutes = [
                 component: () => import('../views/management/Menu.vue'),
                 meta: {
                     title: 'Menu',
+                    icon: 'Document',
                     hidden: false
                 }
             },
@@ -41,7 +44,8 @@ export const constantRoutes = [
                 component: () => import('../views/management/Role.vue'),
                 meta: {
                     title: 'Role',
-                    hidden: false
+                    hidden: false,
+                    icon: 'Document'
                 }
             }
         ]
@@ -57,7 +61,8 @@ export const constantRoutes = [
         component: () => import('../views/Demo1.vue'),
         meta: {
             title: 'demo1',
-            hidden: false
+            hidden: false,
+            icon: 'Cpu'
         }
     },
     {
@@ -66,7 +71,8 @@ export const constantRoutes = [
         component: () => import('../views/Demo2.vue'),
         meta: {
             title: 'demo2',
-            hidden: false
+            hidden: false,
+            icon: 'Cpu'
         }
     },
     {

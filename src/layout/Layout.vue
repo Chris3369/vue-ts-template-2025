@@ -3,24 +3,32 @@
         <div class="menu">
             <Logo />
             <el-scrollbar class="scrollbar">
-                <el-menu background-color="$menu-background" text-color="white">
-                    <Menu :menus="userStore.menuRoutes"></Menu>
+                <el-menu 
+                    :default-active="$route.path"
+                    background-color="$menu-background" 
+                    text-color="white"
+                >
+                    <SideMenu :menus="userStore.menuRoutes"></SideMenu>
                 </el-menu>
             </el-scrollbar>
         </div>
         <div class="nav">nav</div>
-        <div class="main">
-            <p class="test">main</p>
+        <div class="content">
+            <Content />
         </div>
     </div>
 </template>
 
 <script setup lang='ts'>
-import Logo from '@/layout/Logo.vue'
-import Menu from '@/layout/Menu.vue'
-import UserStore from '@/store/user.store'
+import { useRoute } from 'vue-router'
+import Logo from './Logo.vue'
+import SideMenu from './SideMenu.vue'
+import Content from './Content.vue'
+import UserStore from '../store/user.store'
 
 const userStore = UserStore()
+
+const $route = useRoute()
 </script>
 
 <style lang="scss" scoped>
@@ -52,7 +60,7 @@ const userStore = UserStore()
         background-color: red;
     }
 
-    .main {
+    .content {
         position: absolute;
         left: $menu-width;
         top: $nav-height;
@@ -64,10 +72,6 @@ const userStore = UserStore()
 
         overflow: auto;
 
-        .test {
-            height: 10000px;
-            background-color: green;
-        }
     }
 }
 </style>

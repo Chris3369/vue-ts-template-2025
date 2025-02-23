@@ -2,6 +2,9 @@
     <template v-for="menu in menus" :key="menu.path">
         <template v-if="!menu.children">
             <el-menu-item :index="menu.path" v-if="menu?.meta && !menu.meta.hidden" @click="goTo(menu.path)">
+                <el-icon>
+                    <component :is="menu.meta.icon"></component>
+                </el-icon>
                 <template #title>
                     <span>{{ menu.meta && menu.meta.title }}</span>
                 </template>
@@ -10,6 +13,9 @@
 
         <template v-if="menu.children && menu.children.length == 1">
             <el-menu-item :index="menu.children[0].path" @click="goTo(menu.children[0].path)">
+                <el-icon>
+                    <component :is="menu.children[0].meta?.icon"></component>
+                </el-icon>
                 <template #title>
                     <span>{{ menu.children[0].meta && menu.children[0].meta.title }}</span>
                 </template>
@@ -19,16 +25,19 @@
         <template v-if="menu.children && menu.children.length > 1">
             <el-sub-menu v-if="menu?.meta && !menu.meta.hidden" :index="menu.path">
                 <template #title>
-                    <span>{{ menu.meta && menu.meta.title }}</span>
+                    <el-icon>
+                        <component :is="menu.meta.icon"></component>
+                    </el-icon>
+                    <span>{{ menu.meta.title }}</span>
                 </template>
-                <Menu :menus="menu.children"></Menu>
+                <SideMenu :menus="menu.children"></SideMenu>
             </el-sub-menu>
         </template>
 
     </template>
 </template>
 
-<script setup lang='ts' name="Menu">
+<script setup lang='ts' name="SideMenu">
 import type { RouteRecordRaw } from 'vue-router'
 import { useRouter } from 'vue-router'
 
