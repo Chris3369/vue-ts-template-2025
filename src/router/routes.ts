@@ -47,7 +47,17 @@ export const constantRoutes = [
                     hidden: false,
                     icon: 'Document'
                 }
-            }
+            },
+            {
+                path: '/management/demo3',
+                name: 'demo3',
+                component: () => import('../views/management/Demo3.vue'),
+                meta: {
+                    title: 'demo3',
+                    hidden: false,
+                    icon: 'Cpu'
+                }
+            },
         ]
     },
     {

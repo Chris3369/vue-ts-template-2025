@@ -17,7 +17,6 @@ export default defineConfig(({ command, mode }) => {
         [env.VITE_BASE_API]: {
           target: env.VITE_SERVE,
           changeOrigin: true,
-          rewrite: (path: string) => path.replace(/^\/api/, ''),
         }
       },
     },
@@ -47,3 +46,5 @@ export default defineConfig(({ command, mode }) => {
     ...config
   }
 })
+
+// https://israynotarray.com/nodejs/20230407/1216067379/
