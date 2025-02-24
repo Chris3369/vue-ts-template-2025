@@ -54,5 +54,35 @@ export default defineMock([
             }
         },
     },
+    {
+        headers: { 'Content-Type': 'application/json' },
+        url: '/api/auth/logout',
+        method: ['POST'],
+        delay: 1000,
+        status: 200,
+        statusText: 'OK',
+        response(req, res, next) {
+
+            // try {
+            //     const refreshToken = req.cookies.refreshToken
+            //     if (refreshToken) {
+            //         const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET)
+            //         await redis.del(`refresh_token:${decoded.id}`)
+            //     }
+        
+            //     res.clearCookie('accessToken')
+            //     res.clearCookie('refreshToken')
+            //     res.json({ message: 'Logged out successfully' })
+        
+            // } catch (error) {
+            //     res.status(500).json({ message: error.message })
+            // }
+
+            res.end(JSON.stringify({
+                code: 200,
+                message: 'success',
+            }))
+        },
+    },
 ])
 

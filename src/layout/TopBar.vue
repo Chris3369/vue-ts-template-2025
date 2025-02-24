@@ -36,14 +36,12 @@ import SettingStore from '../store/setting.store'
 const $route = useRoute()
 const $router = useRouter()
 
-console.log($route.matched)
-
 const userStore = UserStore()
 const settingStore = SettingStore()
 
 const logout = async () => {
-    // await userStore.logout()
-    // $router.replace({ name: 'login' })
+    await userStore.logout()
+    $router.replace('/login')
 }
 
 </script>
