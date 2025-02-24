@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
 import { reqLogin, reqLogout } from '../api/auth'
 import type { LoginForm, LoginResponse, User } from '../api/auth/type'
@@ -10,10 +10,6 @@ const userStore = defineStore('user', () => {
     const user = ref<User | null>(JSON.parse(localStorage.getItem('user') || 'null'))
 
     const menuRoutes = ref<RouteRecordRaw[]>(constantRoutes)
-
-    const isLogin = computed(() => {
-        return user.value !== null
-    })
 
     const login = async (form: LoginForm) => {
         const response = await reqLogin(form)
@@ -42,7 +38,7 @@ const userStore = defineStore('user', () => {
         }
     }
 
-    return { user, menuRoutes, isLogin, login, logout };
+    return { user, menuRoutes, login, logout };
 })
 
 export default userStore
