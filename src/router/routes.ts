@@ -91,6 +91,16 @@ export const constantRoutes = [
                     icon: 'Cpu'
                 }
             },
+            {
+                path: '/demo/demo4',
+                name: 'demo-demo4',
+                component: () => import('../views/demo/Demo4.vue'),
+                meta: {
+                    title: 'demo4',
+                    hidden: false,
+                    icon: 'Cpu'
+                }
+            },
         ]
     },
     {
