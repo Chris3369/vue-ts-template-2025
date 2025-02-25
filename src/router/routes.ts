@@ -48,10 +48,43 @@ export const constantRoutes = [
                     icon: 'Document'
                 }
             },
+        ]
+    },
+    {
+        path:'/demo',
+        name: 'demo',
+        component: () => import('../layout/Layout.vue'),
+        redirect: '/demo/demo1',
+        meta: {
+            title: 'Demo',
+            hidden: false,
+            icon: 'Menu'
+        },
+        children: [
             {
-                path: '/management/demo3',
-                name: 'demo3',
-                component: () => import('../views/management/Demo3.vue'),
+                path: '/demo/demo1',
+                name: 'demo-demo1',
+                component: () => import('../views/demo/Demo1.vue'),
+                meta: {
+                    title: 'demo1',
+                    hidden: false,
+                    icon: 'Cpu'
+                }
+            },
+            {
+                path: '/demo/demo2',
+                name: 'demo-demo2',
+                component: () => import('../views/demo/Demo2.vue'),
+                meta: {
+                    title: 'demo2',
+                    hidden: false,
+                    icon: 'Cpu'
+                }
+            },
+            {
+                path: '/demo/demo3',
+                name: 'demo-demo3',
+                component: () => import('../views/demo/Demo3.vue'),
                 meta: {
                     title: 'demo3',
                     hidden: false,
@@ -64,26 +97,6 @@ export const constantRoutes = [
         path: '/login',
         name: 'login',
         component: () => import('../views/Login.vue'),
-    },
-    {
-        path: '/demo1',
-        name: 'demo1',
-        component: () => import('../views/Demo1.vue'),
-        meta: {
-            title: 'demo1',
-            hidden: false,
-            icon: 'Cpu'
-        }
-    },
-    {
-        path: '/demo2',
-        name: 'demo2',
-        component: () => import('../views/Demo2.vue'),
-        meta: {
-            title: 'demo2',
-            hidden: false,
-            icon: 'Cpu'
-        }
     },
     {
         path: '/404',
