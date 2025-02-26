@@ -10,7 +10,7 @@
         </template>
     </el-dialog>
 </template>
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 /*
 * @定义Dialog参数:
@@ -19,8 +19,10 @@ import { ref } from 'vue';
 * close-on-press-escape：通过按下 ESC 关闭 Dialog；
 * destroy-on-close：关闭时销毁元素； align-center：文字是否居中； draggable：是否可拖拽
 */
+
 const emits = defineEmits(['cancel', 'confirm'])
 let dialogVisible = ref();
+
 const props = defineProps({
     dialogVisible: {
         type: Boolean,

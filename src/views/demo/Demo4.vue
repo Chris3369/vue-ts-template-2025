@@ -55,14 +55,6 @@ const handleDelete = (index: number, row: any) => {
 // === Dialog ===
 
 const dialogVisible = ref(false);
-const dialogTitle = ref('');
-const dialogWidth = ref('');
-
-function resetPwd(){
-    dialogTitle.value = '重置密码';
-    dialogWidth.value = '30%';
-    dialogVisible.value = true;
-}
 
 function handleCancel() {
     dialogVisible.value = false; 
